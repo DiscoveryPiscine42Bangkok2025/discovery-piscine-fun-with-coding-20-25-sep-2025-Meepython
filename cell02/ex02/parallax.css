@@ -1,0 +1,44 @@
+/* reset & base */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
+
+/* parallax sections */
+.parallax {
+  position: relative;
+  min-height: 80vh;                 /* tall like the spec screenshots */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;     /* the parallax bit */
+}
+
+/* pick any two images you like */
+.img1 { background-image: url("https://picsum.photos/id/237/1600/900"); }
+.img2 { background-image: url("https://picsum.photos/id/1025/1600/900"); }
+
+/* centered tiny caption */
+.caption {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;                  /* tiny like the PDF */
+  letter-spacing: .2px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+/* middle black block */
+.block {
+  background: black;
+  color: white;
+  min-height: 40vh;                 /* big rectangle */
+  display: grid;
+  place-items: end center;          /* text near bottom center */
+  padding: 16px;
+}
+.block p { margin: 0; font-size: 12px; }
+
+/* mobile fallback: many mobile browsers ignore background-attachment: fixed */
+@media (max-width: 900px) {
+  .parallax { background-attachment: scroll; } /* graceful degrade */
+}
