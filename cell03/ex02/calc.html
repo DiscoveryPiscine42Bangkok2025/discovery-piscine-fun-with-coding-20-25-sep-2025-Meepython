@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It’s over 9000</title>
+  <style>
+    body { font-family: system-ui, Arial; display:flex; height:100vh; margin:0; }
+    .wrap { margin:auto; display:flex; gap:8px; align-items:center; }
+    input[type="text"], select { padding:8px; width:110px; }
+    input[type="submit"] { padding:8px 14px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <form class="wrap" id="calc">
+    <input type="text" id="left"  placeholder="Left (>=0)" />
+    <select id="op">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="Right (>=0)" />
+    <input type="submit" value="Try me!" />
+  </form>
+
+  <script>
+    // 30s nag
+    setInterval(function () {
+      alert('Please, use me...');
+      console.log('Please, use me...');
+    }, 30000);
+
+    const form  = document.getElementById('calc');
+    const left  = document.getElementById('left');
+    const right = document.getElementById('right');
+    const opSel = document.getElementById('op');
+
+    function isNonNegInt(s) {
+      // only digits; no signs, no decimals
+      return /^\d+$/.test(s);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const aStr = left.value.trim();
+      const bStr = right.value.trim();
+
+      if (!isNonNegInt(aStr) || !isNonNegInt(bStr)) {
+        alert('Error :(');
+        console.log('Error :(');
+        return;
+      }
+
+      const a = parseInt(aStr, 10);
+      const b = parseInt(bStr, 10);
+      const op = opSel.value;
+
+      // divide or modulo by zero
+      if ((op === '/' || op === '%') && b === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      let res;
+      switch (op) {
+        case '+': res = a + b; break;
+        case '-': res = a - b; break;
+        case '*': res = a * b; break;
+        case '/': res = a / b; break;
+        case '%': res = a % b; break;
+      }
+
+      alert(String(res));
+      console.log(res);
+    });
+  </script>
+</body>
+</html>

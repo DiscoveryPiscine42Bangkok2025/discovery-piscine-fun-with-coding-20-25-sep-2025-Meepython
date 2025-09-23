@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.img-cell img {
+  width: 100%;
+  display: block;
+}
+
+.login {
+  font-weight: bold;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+.desc {
+  color: gray;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+.school {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.socials {
+  padding: 10px 0;
+}
+
+.socials a {
+  margin: 0 6px;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
