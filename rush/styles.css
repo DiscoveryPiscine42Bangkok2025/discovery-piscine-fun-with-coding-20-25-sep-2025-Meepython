@@ -1,0 +1,25 @@
+/* smooth scroll + anchor offset for fixed navbar */
+html { scroll-behavior: smooth; }
+:root { --nav-h: 56px; }
+
+.section { padding: 80px 0; }
+.section-title { margin-bottom: 1rem; }
+
+#about, #showcase, #contact { scroll-margin-top: calc(var(--nav-h) + 16px); }
+
+/* hero utilities */
+
+.avatar-bg {
+  width: 120px;            /* or whatever size you want */
+  height: 120px;           /* force square */
+  object-fit: cover;       /* crops instead of squishing */
+  object-position: center; /* keeps face centered */
+}
+
+.pt-7 { padding-top: calc(var(--nav-h) + 3rem); }
+.bg-gradient-dark {
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(255,255,255,.06), transparent),
+              #0b0b0b;
+}
+
+.avatar-xl { width: 120px; height: 120px; object-fit: cover; }

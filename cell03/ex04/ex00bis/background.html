@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background changer jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    body { text-align: center; margin-top: 20%; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <button id="colorChangeBtn">Change Background</button>
+
+  <script>
+    function getRandomHexColor() {
+      return "#" + Math.floor(Math.random() * 16777215)
+        .toString(16).padStart(6, "0");
+    }
+
+    $("#colorChangeBtn").on("click", function () {
+      $("body").css("background-color", getRandomHexColor());
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To do or not to do (jQuery)</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Arial; margin: 24px; }
+    #controls { margin-bottom: 12px; }
+    #newBtn { padding: 8px 14px; cursor: pointer; }
+    #ft_list { display: flex; flex-direction: column; gap: 8px; } /* we'll prepend in JS */
+    .todo {
+      padding: 10px 12px; background:#f2f2f2; border:1px solid #ddd; border-radius:6px;
+      cursor: pointer; user-select: none;
+    }
+    .todo:hover { background:#e9e9e9; }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    <button id="newBtn">New</button>
+  </div>
+
+  <!-- Required container -->
+  <div id="ft_list"></div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="todo.js"></script>
+</body>
+</html>

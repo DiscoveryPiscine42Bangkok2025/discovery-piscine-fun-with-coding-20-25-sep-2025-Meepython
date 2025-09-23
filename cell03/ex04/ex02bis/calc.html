@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <input type="text" id="left">
+  <select id="op">
+    <option>+</option><option>-</option><option>*</option><option>/</option><option>%</option>
+  </select>
+  <input type="text" id="right">
+  <input type="button" id="try" value="Try me!">
+
+  <script>
+    setInterval(()=>alert("Please, use me..."), 30000);
+
+    function isValid(n) { return /^\d+$/.test(n); }
+
+    $("#try").on("click", function(){
+      let a = $("#left").val().trim();
+      let b = $("#right").val().trim();
+      let op = $("#op").val();
+
+      if(!isValid(a) || !isValid(b)) { alert("Error :("); console.log("Error :("); return; }
+      a = parseInt(a); b = parseInt(b);
+
+      if((op==="/" || op==="%") && b===0) { alert("It's over 9000!"); console.log("It's over 9000!"); return; }
+
+      let res;
+      switch(op){ case "+":res=a+b;break;case "-":res=a-b;break;case "*":res=a*b;break;case "/":res=a/b;break;case "%":res=a%b;break; }
+      alert(res); console.log(res);
+    });
+  </script>
+</body>
+</html>
